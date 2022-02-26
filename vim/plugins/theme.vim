@@ -1,4 +1,4 @@
-colorscheme gruvbox
+" colorscheme gruvbox
 highlight Normal guibg=none
 " Lightline
 let g:lightline = {

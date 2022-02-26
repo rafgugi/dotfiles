@@ -1,17 +1,19 @@
-source ~/.config/nvim/plugins/plugins.vim
+if has('nvim')
+  source ~/.config/nvim/plugins/plugins.vim
+endif
 
 syntax on
 
 set exrc
-set rnu " relative line number
-set nu  " current line number
+set nornu " relative line number, enable with ctrl+g
+set nonu  " current line number, enable with ctrl+g
 set nohlsearch
 set hidden
 set noerrorbells
 set incsearch
 set scrolloff=5      " Leave n lines of buffer when scrolling
 set sidescrolloff=10 " Leave n characters of horizontal buffer when scrolling
-set colorcolumn=80
+" set colorcolumn=80 " Add ruler in column n
 set signcolumn=no " two column in the left
 
 " Softtabs, 2 spaces
@@ -56,7 +58,7 @@ vnoremap <C-c> "*y
 vnoremap <C-r> "hy:%s/<C-r>h//g<left><left><left>
 
 " " Toggle line numbers
-nnoremap <C-g> :set nu!<cr>:set rnu!<cr>
+nnoremap <C-g> :set nu! rnu!<cr>
 
 " " Line moving
 " " " Normal mode
