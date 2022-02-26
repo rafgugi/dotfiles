@@ -14,7 +14,7 @@ set incsearch
 set scrolloff=5      " Leave n lines of buffer when scrolling
 set sidescrolloff=10 " Leave n characters of horizontal buffer when scrolling
 " set colorcolumn=80 " Add ruler in column n
-set signcolumn=no " two column in the left
+" set signcolumn=yes " two column in the left
 
 " Softtabs, 2 spaces
 set tabstop=2
@@ -25,9 +25,6 @@ set smartindent
 
 " leader mapping
 map <Space> <leader>
-
-" Git
-map <Leader>gs :Gstatus<CR>
 
 " ctrl+p for faster file search
 " use :Files if you want to include all files
