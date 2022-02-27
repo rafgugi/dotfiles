@@ -21,8 +21,11 @@ Plug 'nvim-telescope/telescope-fzy-native.nvim'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 
-" Others
+" Git
 Plug 'tpope/vim-fugitive'
+Plug 'airblade/vim-gitgutter'
+
+" Others
 Plug 'mbbill/undotree'
 Plug 'ap/vim-css-color'
 call plug#end()
