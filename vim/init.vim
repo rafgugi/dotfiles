@@ -1,3 +1,4 @@
+" only use plugin if you are using nvim
 if has('nvim')
   source ~/.config/nvim/plugins/plugins.vim
 endif
@@ -24,6 +25,11 @@ set smartindent
 " leader mapping
 map <Space> <leader>
 
+" Write to file
+nnoremap <leader>w <Esc>:w<CR>
+" Reload vimrc
+map <leader>so :so $MYVIMRC<CR>
+
 " " Panel switching
 map <leader>h :wincmd h<CR>
 map <leader>j :wincmd j<CR>
@@ -32,19 +38,32 @@ map <leader>l :wincmd l<CR>
 " " Split panel
 nnoremap <leader>v <C-w>v
 nnoremap <leader>s <C-w>s
+" " Panel resize
+nnoremap <silent> <leader>+ :resize +5<CR>
+nnoremap <silent> <leader>- :resize -5<CR>
+nnoremap <silent> <leader>++ :exe "resize " . (winheight(0) * 3/2)<CR>
+nnoremap <silent> <leader>-- :exe "resize " . (winheight(0) * 2/3)<CR>
 
-" Easy tab navigation
-nnoremap <C-h> :tabprevious<CR>
-nnoremap <C-l> :tabnext<CR>
+" Remap arrow keys to buffer switching
+nnoremap <Left> :tabprevious<CR>
+nnoremap <Right> :tabnext<CR>
+" Remap shift + arrow keys to open new tabs
+nnoremap <S-Left> :0tabnew<CR>
+nnoremap <S-Right> :$tabnew<CR>
+
+" Press <leader>bg in order to toggle light/dark background
+map <leader>bg :let &background = ( &background == "dark"? "light" : "dark" )<CR>
 
 " Map yanked to clipboard
 vnoremap <C-c> "*y
+" Make Y yank the rest of the line, as you would expect it to
+nnoremap Y y$
 
 " Find/replace
 vnoremap <C-r> "hy:%s/<C-r>h//g<left><left><left>
 
 " Toggle line numbers
-nnoremap <C-g> :set nu! rnu!<CR>
+nnoremap <silent> <C-g> :set nu! rnu!<CR>
 
 " Line moving
 " " Normal mode
