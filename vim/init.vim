@@ -1,6 +1,6 @@
 " only use plugin if you are using nvim
 if has('nvim')
-  source ~/.config/nvim/plugins/plugins.vim
+  source ~/.config/nvim/plugin/plugins.vim
 endif
 
 syntax on

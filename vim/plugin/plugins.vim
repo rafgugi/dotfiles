@@ -31,6 +31,6 @@ Plug 'ap/vim-css-color'
 call plug#end()
 
 " NerdTree config
-source ~/.config/nvim/plugins/nerdtree.vim
-source ~/.config/nvim/plugins/theme.vim
+source ~/.config/nvim/plugin/nerdtree.vim
+source ~/.config/nvim/plugin/theme.vim
 
