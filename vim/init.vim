@@ -82,6 +82,10 @@ vnoremap <C-k> :m '<-2<CR>gv=gv
 " Git
 nnoremap <leader>com :G commit<CR>
 nnoremap <leader>dif :G diff<CR>
+" " Stage or unstage current file
+nnoremap <leader>add :Gw<CR>
+nnoremap <leader>res :G reset <C-r>%<CR>
+" " Push and pull current branch
 nnoremap <leader>pus :G push origin <C-r>=fugitive#head()<CR><CR>
 nnoremap <leader>pul :G pull origin <C-r>=fugitive#head()<CR><CR>
 
