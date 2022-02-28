@@ -67,8 +67,8 @@ nmap <leader>gu <Plug>(GitGutterUndoHunk)
 
 " ctrl+p for faster file search
 " use :Files if you want to include all files
-nnoremap <C-p> :GFiles<CR>
-nnoremap <leader>ff :Files<CR>
+" nnoremap <C-p> :GFiles<CR>
+" nnoremap <leader>ff :Files<CR>
 let g:fzf_action = {
   \ 'ctrl-t': 'tab split',
   \ 'ctrl-s': 'split',
@@ -76,11 +76,11 @@ let g:fzf_action = {
   \}
 
 " Telescope
-" nnoremap <leader>ff <cmd>Telescope find_files<CR>
+nnoremap <C-p> <cmd>Telescope git_files<CR>
+nnoremap <leader>ff <cmd>Telescope find_files<CR>
 nnoremap <leader>fg <cmd>Telescope live_grep<CR>
 nnoremap <leader>fb <cmd>Telescope buffers<CR>
 nnoremap <leader>fh <cmd>Telescope help_tags<CR>
-" nnoremap <leader>ps :lua require('telescope.builtin').grep_string({ search = vim.fn.input("Grep For > ")})<CR>
-" nnoremap <C-p> :lua require('telescope.builtin').git_files()<CR>
-" nnoremap <leader>pf :lua require('telescope.builtin').find_files()<CR>
+nnoremap <leader>ps :lua require('telescope.builtin').grep_string({ search = vim.fn.input("Grep For > ")})<CR>
+nnoremap <leader>pf :lua require('telescope.builtin').find_files()<CR>
 
