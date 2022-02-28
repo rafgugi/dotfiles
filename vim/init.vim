@@ -82,8 +82,8 @@ vnoremap <C-k> :m '<-2<CR>gv=gv
 " Git
 nnoremap <leader>com :G commit<CR>
 nnoremap <leader>dif :G diff<CR>
-nnoremap <leader>pus :G push origin HEAD<CR>
-nnoremap <leader>pul :G pull origin HEAD<CR>
+nnoremap <leader>pus :G push origin <C-r>=fugitive#head()<CR><CR>
+nnoremap <leader>pul :G pull origin <C-r>=fugitive#head()<CR><CR>
 
 " GitGutter
 " " Jump between hunks
