@@ -45,8 +45,8 @@ nnoremap <silent> <leader>++ :exe "resize " . (winheight(0) * 3/2)<CR>
 nnoremap <silent> <leader>-- :exe "resize " . (winheight(0) * 2/3)<CR>
 
 " Remap arrow keys to buffer switching
-nnoremap <Left> :tabprevious<CR>
-nnoremap <Right> :tabnext<CR>
+nnoremap <leader>[ :tabprevious<CR>
+nnoremap <leader>] :tabnext<CR>
 " Remap shift + arrow keys to open new tabs
 nnoremap <S-Left> :0tabnew<CR>
 nnoremap <S-Right> :$tabnew<CR>
