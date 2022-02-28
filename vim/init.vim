@@ -78,13 +78,14 @@ vnoremap <C-k> :m '<-2<CR>gv=gv
 
 " Git
 nnoremap <leader>com :G commit<CR>
+nnoremap <leader>dif :G diff<CR>
 nnoremap <leader>pus :G push origin HEAD<CR>
 nnoremap <leader>pul :G pull origin HEAD<CR>
 
 " GitGutter
 " " Jump between hunks
-nmap <leader>gn <Plug>(GitGutterNextHunk)
-nmap <leader>gp <Plug>(GitGutterPrevHunk)
+nmap ]c <Plug>(GitGutterNextHunk)
+nmap [c <Plug>(GitGutterPrevHunk)
 " " Hunk-add and hunk-revert for chunk staging
 nmap <leader>ga <Plug>(GitGutterStageHunk)
 nmap <leader>gu <Plug>(GitGutterUndoHunk)
