@@ -8,7 +8,7 @@ syntax on
 set exrc
 set rnu " relative line number, enable with ctrl+g
 set nu  " current line number, enable with ctrl+g
-set nohlsearch
+set hlsearch " highlight all matching search
 set hidden
 set noerrorbells
 set incsearch
@@ -29,6 +29,9 @@ map <Space> <leader>
 nnoremap <leader>w <Esc>:w<CR>
 " Reload vimrc
 map <leader>so :so $MYVIMRC<CR>
+
+" Clear search highlighting
+nnoremap <Esc><Esc> :noh<CR>
 
 " " Panel switching
 map <leader>h :wincmd h<CR>
