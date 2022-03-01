@@ -27,6 +27,11 @@ map <Space> <leader>
 
 " Write to file
 nnoremap <leader>w <Esc>:w<CR>
+
+" Trying to imitate duplicate file in sublime
+" TODO: handle file that has no extension
+nnoremap <leader>dup :saveas <C-r>=expand('%:h/ .%:e')<CR><S-left><backspace>
+
 " Reload vimrc
 map <leader>so :so $MYVIMRC<CR>
 
