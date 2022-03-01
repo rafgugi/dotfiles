@@ -49,8 +49,8 @@ nnoremap <leader>s <C-w>s
 " " Panel resize
 nnoremap <silent> <leader>+ :resize +5<CR>
 nnoremap <silent> <leader>- :resize -5<CR>
-nnoremap <silent> <leader>++ :exe "resize " . (winheight(0) * 3/2)<CR>
-nnoremap <silent> <leader>-- :exe "resize " . (winheight(0) * 2/3)<CR>
+" nnoremap <silent> <leader>++ :exe "resize " . (winheight(0) * 3/2)<CR>
+" nnoremap <silent> <leader>-- :exe "resize " . (winheight(0) * 2/3)<CR>
 
 " Remap arrow keys to buffer switching
 nnoremap <leader>[ :tabprevious<CR>
