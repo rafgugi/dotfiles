@@ -12,7 +12,7 @@ set hlsearch " highlight all matching search
 set hidden
 set noerrorbells
 set incsearch
-set scrolloff=5      " Leave n lines of buffer when scrolling
+set scrolloff=7      " Leave n lines of buffer when scrolling
 set sidescrolloff=10 " Leave n characters of horizontal buffer when scrolling
 
 " Softtabs, 2 spaces
@@ -66,6 +66,17 @@ map <leader>bg :let &background = ( &background == "dark"? "light" : "dark" )<CR
 vnoremap <C-c> "*y
 " Make Y yank the rest of the line, as you would expect it to
 nnoremap Y y$
+
+" greatest remap ever
+vnoremap <leader>p "_dP
+
+" next greatest remap ever : asbjornHaland
+nnoremap <leader>y "+y
+vnoremap <leader>y "+y
+nnoremap <leader>Y gg"+yG
+
+nnoremap <leader>d "_d
+vnoremap <leader>d "_d
 
 " Find/replace
 vnoremap <C-r> "hy:%s/<C-r>h//g<left><left><left>
@@ -121,3 +132,4 @@ nnoremap <leader>fh <cmd>Telescope help_tags<CR>
 nnoremap <leader>ps :lua require('telescope.builtin').grep_string({ search = vim.fn.input("Grep For > ")})<CR>
 nnoremap <leader>pf :lua require('telescope.builtin').find_files()<CR>
 
+nnoremap <leader>u :UndotreeToggle<CR>
