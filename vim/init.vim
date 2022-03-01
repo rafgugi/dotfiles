@@ -104,6 +104,8 @@ nnoremap <leader>res :G reset <C-r>%<CR>
 " " Push and pull current branch
 nnoremap <leader>pus :G push origin <C-r>=fugitive#head()<CR><CR>
 nnoremap <leader>pul :G pull origin <C-r>=fugitive#head()<CR><CR>
+" " Checkout
+nnoremap <leader>gco :GBranches<CR>
 
 " GitGutter
 " " Jump between hunks

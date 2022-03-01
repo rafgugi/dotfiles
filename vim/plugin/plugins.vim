@@ -24,6 +24,7 @@ Plug 'junegunn/fzf.vim'
 " Git
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
+Plug 'stsewd/fzf-checkout.vim'
 
 " Others
 Plug 'mbbill/undotree'
