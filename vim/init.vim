@@ -57,6 +57,11 @@ inoremap <C-k> <ESC>:m .-2<CR>==gi
 vnoremap <C-j> :m '>+1<CR>gv=gv
 vnoremap <C-k> :m '<-2<CR>gv=gv
 
+" Git
+nnoremap <leader>com :G commit<CR>
+nnoremap <leader>pus :G push origin HEAD<CR>
+nnoremap <leader>pul :G pull origin HEAD<CR>
+
 " GitGutter
 " " Jump between hunks
 nmap <leader>gn <Plug>(GitGutterNextHunk)
