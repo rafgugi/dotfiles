@@ -14,6 +14,8 @@ set noerrorbells
 set incsearch
 set scrolloff=7      " Leave n lines of buffer when scrolling
 set sidescrolloff=10 " Leave n characters of horizontal buffer when scrolling
+set splitright " Yes! default split vertical will go to the right
+set splitbelow " Yes! default split horizontal will go to the bottom
 
 " Softtabs, 2 spaces
 set tabstop=2
@@ -43,6 +45,9 @@ map <leader>h :wincmd h<CR>
 map <leader>j :wincmd j<CR>
 map <leader>k :wincmd k<CR>
 map <leader>l :wincmd l<CR>
+" " New panel
+nnoremap <leader>nv :vnew<CR>
+nnoremap <leader>ns :new<CR>
 " " Split panel
 nnoremap <leader>v <C-w>v
 nnoremap <leader>s <C-w>s
