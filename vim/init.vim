@@ -147,3 +147,9 @@ nnoremap <leader>ps :lua require('telescope.builtin').grep_string({ search = vim
 nnoremap <leader>pf :lua require('telescope.builtin').find_files()<CR>
 
 nnoremap <leader>u :UndotreeToggle<CR>
+
+" PHP file config
+autocmd FileType php setlocal ts=4 expandtab
+
+" Yaml file config
+autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
