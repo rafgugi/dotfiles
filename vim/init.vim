@@ -101,7 +101,7 @@ vnoremap <C-j> :m '>+1<CR>gv=gv
 vnoremap <C-k> :m '<-2<CR>gv=gv
 
 " Git
-nnoremap <leader>com :G commit<CR>
+nnoremap <leader>com :G commit --verbose<bar> :resize <C-r>=(winheight(0) * 1/3)<CR><CR>
 nnoremap <leader>dif :G diff<CR>
 " " Stage or unstage current file
 nnoremap <leader>add :Gw<CR>
@@ -119,6 +119,9 @@ nmap [c <Plug>(GitGutterPrevHunk)
 " " Hunk-add and hunk-revert for chunk staging
 nmap <leader>ga <Plug>(GitGutterStageHunk)
 nmap <leader>gu <Plug>(GitGutterUndoHunk)
+" " Change preview hunk from hp to gp
+nmap <leader>gp <Plug>(GitGutterPreviewHunk)
+silent! unmap <buffer> <leader>hp
 
 " ctrl+p for faster file search
 " use :Files if you want to include all files
