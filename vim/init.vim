@@ -88,6 +88,10 @@ vnoremap <C-r> "hy:%s/<C-r>h//g<left><left><left>
 
 " Toggle line numbers
 nnoremap <silent> <C-g> :set nu! rnu!<CR>
+" Toggle wrap text
+nnoremap <C-z> :set wrap!<CR>
+imap <C-z> <ESC><C-z>gi
+vmap <C-z> <ESC><C-z>gv
 
 " Line moving
 " " Normal mode
