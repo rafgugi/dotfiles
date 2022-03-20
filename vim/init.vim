@@ -24,6 +24,10 @@ set shiftround
 set expandtab
 set smartindent
 
+" need to store to file so Undotree to work properly
+set undodir=~/.config/nvim/undodir " set undotree file directory
+set undofile " set undotree to save to file
+
 " leader mapping
 map <Space> <leader>
 
