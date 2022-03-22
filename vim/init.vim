@@ -88,7 +88,7 @@ nnoremap <leader>d "_d
 vnoremap <leader>d "_d
 
 " Find/replace
-vnoremap <C-r> "hy:%s/<C-r>h//g<left><left><left>
+vnoremap <C-r> "hy:%s/<C-r>h//g<left><left>
 
 " Toggle line numbers
 nnoremap <silent> <C-g> :set nu! rnu!<CR>
