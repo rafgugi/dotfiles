@@ -11,6 +11,9 @@ Plug 'ryanoasis/vim-devicons' " need to install nerd font
 Plug 'gruvbox-community/gruvbox'
 Plug 'itchyny/lightline.vim'
 
+" Code
+Plug 'sheerun/vim-polyglot'
+
 " Telescope requirements...
 Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-lua/plenary.nvim'
