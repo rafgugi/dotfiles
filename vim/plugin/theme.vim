@@ -6,7 +6,7 @@ let g:lightline = {
   \ 'active': {
   \   'left':  [
   \              [ 'mode', 'paste' ],
-  \              [ 'readonly', 'MyRelativepath', 'percent', 'modified' ],
+  \              [ 'readonly', 'MyRelativepath', 'percent'],
   \            ],
   \   'right': [
   \              [ 'MyFiletype' ],
