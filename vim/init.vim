@@ -16,6 +16,7 @@ set scrolloff=7      " Leave n lines of buffer when scrolling
 set sidescrolloff=10 " Leave n characters of horizontal buffer when scrolling
 set splitright " Yes! default split vertical will go to the right
 set splitbelow " Yes! default split horizontal will go to the bottom
+set nowrap " default no wrap. toggle with <C-z>
 
 " Softtabs, 2 spaces
 set tabstop=2
@@ -23,6 +24,10 @@ set shiftwidth=2
 set shiftround
 set expandtab
 set smartindent
+
+" unlock hidden chars
+set listchars=tab:\>\─,nbsp:+,space:·
+set list
 
 " need to store to file so Undotree to work properly
 set undodir=~/.config/nvim/undodir " set undotree file directory
