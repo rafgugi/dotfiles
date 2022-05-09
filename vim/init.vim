@@ -36,9 +36,6 @@ set undofile " set undotree to save to file
 " leader mapping
 map <Space> <leader>
 
-" Write to file
-nnoremap <leader>w <Esc>:w<CR>
-
 " Trying to imitate duplicate file in sublime
 " TODO: handle file that has no extension
 nnoremap <leader>dup :saveas <C-r>=expand('%:p')<CR>
