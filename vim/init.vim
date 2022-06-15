@@ -43,6 +43,9 @@ nnoremap <leader>dup :saveas <C-r>=expand('%:p')<CR>
 " Reload vimrc
 map <leader>so :so $MYVIMRC<CR>
 
+" Terminal mode
+tnoremap <Esc> <C-\><C-n>
+
 " Clear search highlighting
 nnoremap <Esc><Esc> :noh<CR>
 
