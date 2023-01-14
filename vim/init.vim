@@ -1,3 +1,9 @@
+" disable some vim provider
+let g:loaded_python3_provider = 0
+let g:loaded_ruby_provider = 0
+let g:loaded_node_provider = 0
+let g:loaded_perl_provider = 0
+
 " only use plugin if you are using nvim
 if has('nvim')
   source ~/.config/nvim/plugin/plugins.vim
