@@ -1,6 +1,10 @@
 " only use plugin if you are using nvim
 if has('nvim')
   source ~/.config/nvim/plugin/plugins.vim
+
+  " unlock hidden chars
+  set listchars=tab:\>\─,nbsp:+,space:·
+  set list
 endif
 
 syntax on
@@ -24,10 +28,6 @@ set shiftwidth=2
 set shiftround
 set expandtab
 set smartindent
-
-" unlock hidden chars
-set listchars=tab:\>\─,nbsp:+,space:·
-set list
 
 " need to store to file so Undotree to work properly
 set undodir=~/.config/nvim/undodir " set undotree file directory
