@@ -54,12 +54,6 @@ map <leader>h :wincmd h<CR>
 map <leader>j :wincmd j<CR>
 map <leader>k :wincmd k<CR>
 map <leader>l :wincmd l<CR>
-" " New panel
-nnoremap <leader>nv :vnew<CR>
-nnoremap <leader>ns :new<CR>
-" " Split panel
-nnoremap <leader>v <C-w>v
-nnoremap <leader>s <C-w>s
 " " Panel resize
 nnoremap <silent> <leader>+ :resize +5<CR>
 nnoremap <silent> <leader>- :resize -5<CR>
