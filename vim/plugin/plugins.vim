@@ -32,6 +32,35 @@ Plug 'stsewd/fzf-checkout.vim'
 " Others
 Plug 'mbbill/undotree'
 Plug 'ap/vim-css-color'
+
+"*****************************************************************************
+"" Custom bundles
+"*****************************************************************************
+
+" elixir
+Plug 'elixir-lang/vim-elixir'
+Plug 'carlosgaldino/elixir-snippets'
+
+" go
+"" Go Lang Bundle
+Plug 'fatih/vim-go', {'do': ':GoInstallBinaries'}
+
+" javascript
+"" Javascript Bundle but probably not necessary yet
+" Plug 'jelera/vim-javascript-syntax'
+
+" php
+"" PHP Bundle
+Plug 'phpactor/phpactor', {'for': 'php', 'do': 'composer install --no-dev -o'}
+Plug 'stephpy/vim-php-cs-fixer'
+Plug 'jwalton512/vim-blade'
+
+" ruby
+Plug 'tpope/vim-rails'
+Plug 'tpope/vim-rake'
+Plug 'tpope/vim-projectionist'
+Plug 'thoughtbot/vim-rspec'
+Plug 'ecomba/vim-ruby-refactoring', {'tag': 'main'}
 call plug#end()
 
 " NerdTree config
