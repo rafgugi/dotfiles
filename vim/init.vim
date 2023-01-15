@@ -120,14 +120,14 @@ inoremap jk <esc>
 inoremap <esc> <esc>:echo "Press jk to escape"<CR>gi
 
 " Git
-nnoremap <leader>com :G commit --verbose<bar> :resize <C-r>=(winheight(0) * 1/3)<CR><CR>
+nnoremap <leader>com :G commit -v<CR>
 nnoremap <leader>dif :G diff<CR>
 " " Stage or unstage current file
 nnoremap <leader>add :Gw<CR>
 nnoremap <leader>res :G reset <C-r>%<CR>
 " " Push and pull current branch
-nnoremap <leader>pus :G push origin <C-r>=fugitive#head()<CR><CR>
-nnoremap <leader>pul :G pull origin <C-r>=fugitive#head()<CR><CR>
+nnoremap <leader>pus :G push origin <C-r>=fugitive#Head()<CR><CR>
+nnoremap <leader>pul :G pull origin <C-r>=fugitive#Head()<CR><CR>
 " " Checkout
 nnoremap <leader>gco :GBranches<CR>
 
