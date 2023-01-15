@@ -113,6 +113,12 @@ inoremap <C-k> <ESC>:m .-2<CR>==gi
 vnoremap <C-j> :m '>+1<CR>gv=gv
 vnoremap <C-k> :m '<-2<CR>gv=gv
 
+" Temporary map from learning.
+nnoremap <leader>" viw<esc>a"<esc>bi"<esc>lel
+nnoremap <leader>' viw<esc>a'<esc>bi'<esc>lel
+inoremap jk <esc>
+inoremap <esc> <esc>:echo "Press jk to escape"<CR>gi
+
 " Git
 nnoremap <leader>com :G commit --verbose<bar> :resize <C-r>=(winheight(0) * 1/3)<CR><CR>
 nnoremap <leader>dif :G diff<CR>
