@@ -15,6 +15,10 @@ if has('nvim')
   " unlock hidden chars
   set listchars=tab:\>\─,nbsp:+,space:·
   set list
+
+  " need to store to file so Undotree to work properly
+  set undodir=~/.config/nvim/undodir " set undotree file directory
+  set undofile " set undotree to save to file
 endif
 
 syntax on
@@ -37,10 +41,6 @@ set shiftround
 set expandtab
 set smartindent
 
-" need to store to file so Undotree to work properly
-set undodir=~/.config/nvim/undodir " set undotree file directory
-set undofile " set undotree to save to file
-
 " leader mapping
 map <Space> <leader>
 
@@ -52,7 +52,7 @@ nnoremap <leader>dup :saveas <C-r>=expand('%:p')<CR>
 map <leader>so :so $MYVIMRC<CR>
 
 " Terminal mode
-tnoremap <Esc> <C-\><C-n>
+tnoremap jk <C-\><C-n>
 
 " Clear search highlighting
 nnoremap <Esc><Esc> :noh<CR>
@@ -120,6 +120,8 @@ nnoremap <leader>" viw<esc>a"<esc>bi"<esc>lel
 nnoremap <leader>' viw<esc>a'<esc>bi'<esc>lel
 inoremap jk <esc>
 inoremap <esc> <esc>:echo "Press jk to escape"<CR>gi
+vnoremap jk <esc>
+vnoremap <esc> <esc>:echo "Press jk to escape"<CR>gv
 
 " Git
 nnoremap <leader>com :G commit -v<CR>
