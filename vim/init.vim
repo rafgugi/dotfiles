@@ -48,8 +48,9 @@ map <Space> <leader>
 " TODO: handle file that has no extension
 nnoremap <leader>dup :saveas <C-r>=expand('%:p')<CR>
 
-" Reload vimrc
-map <leader>so :so $MYVIMRC<CR>
+" Editing vimrc
+nnoremap <leader>ev :vsplit $MYVIMRC<CR>
+nnoremap <leader>so :so $MYVIMRC<CR>
 
 " Terminal mode
 tnoremap jk <C-\><C-n>
@@ -77,6 +78,9 @@ nnoremap <S-Right> :$tabnew<CR>
 
 " Press <leader>bg in order to toggle light/dark background
 map <leader>bg :let &background = ( &background == "dark"? "light" : "dark" )<CR>
+
+" Map yank current path to default register
+nnoremap <leader>cp :let @+ = expand("%")<cr>:echom "Yanked current path"<cr>
 
 " Map yanked to clipboard
 vnoremap <C-c> "*y
