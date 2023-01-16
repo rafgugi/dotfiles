@@ -8,6 +8,10 @@ let g:loaded_perl_provider = 0
 if has('nvim')
   source ~/.config/nvim/plugin/plugins.vim
 
+  set rnu " relative line number, enable with ctrl+g
+  set nu  " current line number, enable with ctrl+g
+  set mouse=
+
   " unlock hidden chars
   set listchars=tab:\>\─,nbsp:+,space:·
   set list
@@ -16,8 +20,6 @@ endif
 syntax on
 
 set exrc
-set rnu " relative line number, enable with ctrl+g
-set nu  " current line number, enable with ctrl+g
 set hlsearch " highlight all matching search
 set hidden
 set noerrorbells
