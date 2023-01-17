@@ -32,6 +32,9 @@ set splitbelow " Yes! default split horizontal will go to the bottom
 set nowrap " default no wrap. toggle with <C-z>
 set autoread
 
+" Do not redraw screen in the middle of a macro
+set lazyredraw
+
 "" Enable hidden buffers
 set hidden
 
