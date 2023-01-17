@@ -96,7 +96,9 @@ vnoremap <C-c> "*y
 " Make Y yank the rest of the line, as you would expect it to
 nnoremap Y y$
 
-" greatest remap ever
+" ex without clobbering my unnamed register.
+nnoremap <leader>d "_d
+vnoremap <leader>d "_d
 vnoremap <leader>p "_dP
 
 " next greatest remap ever : asbjornHaland
@@ -104,8 +106,8 @@ nnoremap <leader>y "+y
 vnoremap <leader>y "+y
 nnoremap <leader>Y gg"+yG
 
-nnoremap <leader>d "_d
-vnoremap <leader>d "_d
+" Instead of stumbling into ex mode, repeat the last macro used.
+nnoremap Q @@
 
 " Find/replace
 vnoremap <C-r> "hy:%s/<C-r>h//g<left><left>
