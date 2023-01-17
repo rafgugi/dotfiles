@@ -133,8 +133,6 @@ nnoremap <leader>" viw<esc>a"<esc>bi"<esc>lel
 nnoremap <leader>' viw<esc>a'<esc>bi'<esc>lel
 inoremap jk <esc>
 inoremap <esc> <esc>:echo "Press jk to escape"<CR>gi
-vnoremap jk <esc>
-vnoremap <esc> <esc>:echo "Press jk to escape"<CR>gv
 
 " Git
 nnoremap <leader>com :G commit -v<CR>
