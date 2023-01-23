@@ -184,7 +184,26 @@ nnoremap <leader>pf :lua require('telescope.builtin').find_files()<CR>
 nnoremap <leader>u :UndotreeToggle<CR>
 
 " PHP file config
-autocmd FileType php setlocal ts=4 sts=4 sw=4 expandtab
+augroup file_php
+  autocmd FileType php setlocal ts=4 sts=4 sw=4 expandtab
+augroup END
+
+" PHP blade file config
+augroup file_blade_php
+  autocmd FileType blade setlocal ts=2 sts=2 sw=2 expandtab
+augroup END
 
 " Yaml file config
-autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
+augroup file_yaml
+  autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
+augroup END
+
+augroup ensure_dir_exist
+  autocmd!
+  autocmd BufWritePre * call mkdir(expand("<afile>:p:h"), "p")
+augroup END
+
+augroup Terminal
+  autocmd!
+  autocmd TermOpen * setlocal nolist nonu nornu
+augroup END
