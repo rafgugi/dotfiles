@@ -82,11 +82,23 @@ nnoremap <silent> <leader>- :resize -5<CR>
 " nnoremap <silent> <leader>-- :exe "resize " . (winheight(0) * 2/3)<CR>
 
 " Remap arrow keys to buffer switching
-nnoremap <leader>[ :tabprevious<CR>
-nnoremap <leader>] :tabnext<CR>
+nnoremap <leader>[ gT
+nnoremap <leader>] gt
+nnoremap <leader>{ :execute "tabmove" tabpagenr() - 2<CR>
+nnoremap <leader>} :execute "tabmove" tabpagenr() + 1<CR>
 " Remap shift + arrow keys to open new tabs
 nnoremap <S-Left> :0tabnew<CR>
 nnoremap <S-Right> :$tabnew<CR>
+" Go to tab by number
+noremap <leader>1 1gt
+noremap <leader>2 2gt
+noremap <leader>3 3gt
+noremap <leader>4 4gt
+noremap <leader>5 5gt
+noremap <leader>6 6gt
+noremap <leader>7 7gt
+noremap <leader>8 8gt
+noremap <leader>9 9gt
 
 " Press <leader>bg in order to toggle light/dark background
 map <leader>bg :let &background = ( &background == "dark"? "light" : "dark" )<CR>
