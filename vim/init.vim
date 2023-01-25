@@ -57,7 +57,6 @@ set backspace=indent,eol,start
 map <Space> <leader>
 
 " Trying to imitate duplicate file in sublime
-" TODO: handle file that has no extension
 nnoremap <leader>dup :saveas <C-r>=expand('%:p')<CR>
 
 " Editing vimrc
@@ -66,9 +65,13 @@ nnoremap <leader>so :so $MYVIMRC<CR>
 
 " Terminal mode
 tnoremap jk <C-\><C-n>
+tnoremap <C-h> <C-b>
+tnoremap <C-j> <C-n>
+tnoremap <C-k> <C-p>
+tnoremap <C-l> <C-f>
 
-" Clear search highlighting
-nnoremap <Esc><Esc> :noh<CR>
+" escape also clear search highlighting
+nnoremap <silent> <Esc> <Esc>:noh<CR>
 
 " " Panel switching
 map <leader>h :wincmd h<CR>
@@ -78,8 +81,6 @@ map <leader>l :wincmd l<CR>
 " " Panel resize
 nnoremap <silent> <leader>+ :resize +5<CR>
 nnoremap <silent> <leader>- :resize -5<CR>
-" nnoremap <silent> <leader>++ :exe "resize " . (winheight(0) * 3/2)<CR>
-" nnoremap <silent> <leader>-- :exe "resize " . (winheight(0) * 2/3)<CR>
 
 " Remap arrow keys to buffer switching
 nnoremap <leader>[ gT
