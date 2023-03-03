@@ -3,7 +3,7 @@
 call plug#begin("~/.config/nvim/plugged")
 " File explorer
 Plug 'preservim/nerdtree'
-Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
+Plug 'johnstef99/vim-nerdtree-syntax-highlight'
 Plug 'Xuyuanp/nerdtree-git-plugin' 
 Plug 'ryanoasis/vim-devicons' " need to install nerd font
 
