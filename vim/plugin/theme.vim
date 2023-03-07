@@ -16,7 +16,7 @@ let g:lightline = {
   \ 'component_function': {
   \   'MyFiletype': 'MyFiletype',
   \   'MyRelativepath': 'MyRelativepath',
-  \   'gitbranch': 'fugitive#head',
+  \   'gitbranch': 'fugitive#Head',
   \ },
   \ }
 
@@ -35,5 +35,6 @@ set noshowmode " Remove default status bar because we already have lightline
 " -----------------------
 " Set the main theme
 " -----------------------
+let g:gruvbox_contrast_dark = 'medium'
 colorscheme gruvbox
 highlight Normal guibg=none
