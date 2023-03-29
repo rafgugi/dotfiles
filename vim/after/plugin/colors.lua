@@ -86,9 +86,11 @@ vim.g.lightline = {
 -- Remove default status bar because we already have custom line
 vim.opt.showmode = false
 
-function ColorMyPencil(color)
-  color = color or "sonokai"
-  vim.cmd.colorscheme(color)
-end
+vim.cmd.colorscheme('sonokai')
 
-ColorMyPencil()
+-- Patch color palette for sonokai
+local configuration = vim.fn['sonokai#get_configuration']()
+local palette = vim.fn['sonokai#get_palette'](configuration.style, configuration.colors_override)
+vim.fn['sonokai#highlight']('Visual', palette.none, palette.grey_dim)
+vim.fn['sonokai#highlight']('IncSearch', palette.bg0, palette.yellow)
+vim.fn['sonokai#highlight']('Search', palette.none, palette.diff_yellow)
