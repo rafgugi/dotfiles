@@ -78,6 +78,11 @@ require('lualine').setup {
   extensions = {}
 }
 
+vim.g.lightline = {
+  enable = {statusline = 0, tabline = 1},
+  colorscheme = 'sonokai'
+}
+
 -- Remove default status bar because we already have custom line
 vim.opt.showmode = false
 
