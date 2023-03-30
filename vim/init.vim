@@ -100,6 +100,7 @@ nnoremap Q @@
 
 " Find/replace
 vnoremap <C-r> "hy:%s/<C-r>h//g<left><left>
+nnoremap <C-r> :%s/\<<C-r><C-w>\>//g<left><left>
 
 " Toggle line numbers
 nnoremap <silent> <C-g> :set nu! rnu!<CR>
@@ -119,8 +120,12 @@ inoremap <C-k> <ESC>:m .-2<CR>==gi
 vnoremap <C-j> :m '>+1<CR>gv=gv
 vnoremap <C-k> :m '<-2<CR>gv=gv
 
+" Combine line preserve cursor
+nnoremap J mzJ`z
+
 " Easy escape
 inoremap jk <ESC>
+inoremap <C-c> <ESC>
 
 " Press <leader>bg in order to toggle light/dark background
 map <leader>bg :let &background = ( &background == "dark"? "light" : "dark" )<CR>
