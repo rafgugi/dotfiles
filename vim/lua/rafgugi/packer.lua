@@ -19,6 +19,14 @@ return require('packer').startup(function(use)
   use 'nvim-lualine/lualine.nvim'
   use 'itchyny/lightline.vim'
   use {'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'}
+  use {
+    'nvim-neo-tree/neo-tree.nvim',
+    branch = 'v2.x',
+    requires = {
+      'nvim-lua/plenary.nvim',
+      'MunifTanjim/nui.nvim',
+    }
+  }
 
   use 'tpope/vim-fugitive'
   use 'lewis6991/gitsigns.nvim'
