@@ -100,7 +100,8 @@ nnoremap Q @@
 
 " Find/replace
 vnoremap <C-r> "hy:%s/<C-r>h//g<left><left>
-nnoremap <C-r> :%s/\<<C-r><C-w>\>//g<left><left>
+" this is override redo command -_-
+" nnoremap <C-r> :%s/\<<C-r><C-w>\>//g<left><left>
 
 " Toggle line numbers
 nnoremap <silent> <C-g> :set nu! rnu!<CR>
