@@ -19,6 +19,7 @@ return require('packer').startup(function(use)
   use 'nvim-lualine/lualine.nvim'
   use 'itchyny/lightline.vim'
   use {'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'}
+  use 'jwalton512/vim-blade'
   use {
     'nvim-neo-tree/neo-tree.nvim',
     branch = 'v2.x',

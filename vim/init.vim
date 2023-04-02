@@ -135,3 +135,8 @@ map <leader>bg :let &background = ( &background == "dark"? "light" : "dark" )<CR
 if has('nvim')
   :lua require("rafgugi")
 endif
+
+" some syntax specific
+augroup file_blade_php
+  autocmd BufRead,BufNewFile *.blade.php setlocal ts=2 sts=2 sw=2 filetype=blade syntax=blade expandtab
+augroup END
