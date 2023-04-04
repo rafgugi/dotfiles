@@ -40,6 +40,8 @@ nnoremap <leader>dup :saveas <C-r>=expand('%:p')<CR>
 " Editing vimrc
 nnoremap <leader>ev :vsplit $MYVIMRC<CR>
 nnoremap <leader>so :so $MYVIMRC<CR>
+
+" File Explorer
 nnoremap <leader>pv :Ex<CR>
 
 " Terminal mode
@@ -49,11 +51,6 @@ tnoremap <C-j> <C-n>
 tnoremap <C-k> <C-p>
 tnoremap <C-l> <C-f>
 
-" " Panel switching
-map <leader>h :wincmd h<CR>
-map <leader>j :wincmd j<CR>
-map <leader>k :wincmd k<CR>
-map <leader>l :wincmd l<CR>
 " " Panel resize
 nnoremap <silent> <leader>+ :resize +5<CR>
 nnoremap <silent> <leader>- :resize -5<CR>
@@ -81,19 +78,17 @@ noremap <leader>9 9gt
 nnoremap <leader>cp :let @+ = expand("%")<cr>:echom "Yanked current path"<cr>
 
 " Map yanked to clipboard
-vnoremap <C-c> "*y
+nnoremap <leader>y "+y
+nnoremap <leader>Y "+y$
+vnoremap <leader>y "+y
 " Make Y yank the rest of the line, as you would expect it to
 nnoremap Y y$
 
 " ex without clobbering my unnamed register.
 nnoremap <leader>d "_d
+nnoremap <leader>D "_d$
 vnoremap <leader>d "_d
 vnoremap <leader>p "_dP
-
-" next greatest remap ever : asbjornHaland
-nnoremap <leader>y "+y
-vnoremap <leader>y "+y
-nnoremap <leader>Y gg"+yG
 
 " Instead of stumbling into ex mode, repeat the last macro used.
 nnoremap Q @@
@@ -123,6 +118,10 @@ vnoremap <C-k> :m '<-2<CR>gv=gv
 
 " Combine line preserve cursor
 nnoremap J mzJ`z
+
+" Cursor stays in the middle when searching
+nnoremap n nzz
+nnoremap N Nzz
 
 " Easy escape
 inoremap jk <ESC>
