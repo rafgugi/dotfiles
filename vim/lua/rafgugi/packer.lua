@@ -13,7 +13,6 @@ return require('packer').startup(function(use)
   }
   use 'mbbill/undotree'
 
-  use 'gruvbox-community/gruvbox'
   use 'sainnhe/sonokai'
   use 'kyazdani42/nvim-web-devicons'
   use 'nvim-lualine/lualine.nvim'

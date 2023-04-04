@@ -27,15 +27,34 @@ require('nvim-web-devicons').setup {
   -- same as `override` but specifically for overrides by filename
   -- takes effect when `strict` is true
   override_by_filename = {
-    [".gitignore"] = {
-      icon = "",
-      color = "#f1502f",
-      name = "Gitignore"
-    }
+    ["dockerfile"] = {
+      icon = "",
+      color = "#2e5f99",
+      cterm_color = "25",
+      name = "Dockerfile",
+    },
   };
   -- same as `override` but specifically for overrides by extension
   -- takes effect when `strict` is true
   override_by_extension = {
+    ["docker-compose.yml"] = {
+      icon = "",
+      color = "#2e5f99",
+      cterm_color = "25",
+      name = "Dockerfile",
+    },
+    ["docker-compose.yaml"] = {
+      icon = "",
+      color = "#2e5f99",
+      cterm_color = "25",
+      name = "Dockerfile",
+    },
+    [".dockerignore"] = {
+      icon = "",
+      color = "#2e5f99",
+      cterm_color = "25",
+      name = "Dockerfile",
+    },
     ["log"] = {
       icon = "",
       color = "#81e043",
