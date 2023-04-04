@@ -134,13 +134,14 @@ require('lualine').setup {
     lualine_y = {
       {
         'filetype',
-        colored = false,   -- Displays filetype icon in color if set to true
+        colored = true,    -- Displays filetype icon in color if set to true
         icon_only = false, -- Display only an icon for filetype
       }
     },
     lualine_z = {
+      {'searchcount', padding = { left = 1, right = 0 } },
+      {'encoding', fmt = myLocation, padding = { left = 1, right = 0 } },
       {'encoding', fmt = myProgress, padding = { left = 1, right = 1 } },
-      {'encoding', fmt = myLocation, padding = { left = 0, right = 1 } },
     }
   },
   inactive_sections = {
