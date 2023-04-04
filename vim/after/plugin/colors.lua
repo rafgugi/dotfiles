@@ -115,7 +115,7 @@ require('lualine').setup {
     lualine_y = {
       {
         'filetype',
-        colored = true,   -- Displays filetype icon in color if set to true
+        colored = false,   -- Displays filetype icon in color if set to true
         icon_only = false, -- Display only an icon for filetype
       }
     },
