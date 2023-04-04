@@ -1,26 +1,3 @@
-" disable some vim provider
-let g:loaded_python3_provider = 0
-let g:loaded_ruby_provider = 0
-let g:loaded_node_provider = 0
-let g:loaded_perl_provider = 0
-
-" only use plugin if you are using nvim
-if has('nvim')
-  source ~/.config/nvim/plugin/plugins.vim
-
-  set rnu " relative line number, enable with ctrl+g
-  set nu  " current line number, enable with ctrl+g
-  set mouse=
-
-  " unlock hidden chars
-  set listchars=tab:\>\─,nbsp:+,space:·
-  set list
-
-  " need to store to file so Undotree to work properly
-  set undodir=~/.config/nvim/undodir " set undotree file directory
-  set undofile " set undotree to save to file
-endif
-
 syntax on
 
 set exrc
@@ -45,6 +22,7 @@ set smartcase
 
 " Softtabs, 2 spaces
 set tabstop=2
+set softtabstop=2
 set shiftwidth=2
 set shiftround
 set expandtab
@@ -62,6 +40,7 @@ nnoremap <leader>dup :saveas <C-r>=expand('%:p')<CR>
 " Editing vimrc
 nnoremap <leader>ev :vsplit $MYVIMRC<CR>
 nnoremap <leader>so :so $MYVIMRC<CR>
+nnoremap <leader>pv :Ex<CR>
 
 " Terminal mode
 tnoremap jk <C-\><C-n>
@@ -69,9 +48,6 @@ tnoremap <C-h> <C-b>
 tnoremap <C-j> <C-n>
 tnoremap <C-k> <C-p>
 tnoremap <C-l> <C-f>
-
-" escape also clear search highlighting
-nnoremap <silent> <Esc> <Esc>:noh<CR>
 
 " " Panel switching
 map <leader>h :wincmd h<CR>
@@ -101,9 +77,6 @@ noremap <leader>7 7gt
 noremap <leader>8 8gt
 noremap <leader>9 9gt
 
-" Press <leader>bg in order to toggle light/dark background
-map <leader>bg :let &background = ( &background == "dark"? "light" : "dark" )<CR>
-
 " Map yank current path to default register
 nnoremap <leader>cp :let @+ = expand("%")<cr>:echom "Yanked current path"<cr>
 
@@ -127,6 +100,8 @@ nnoremap Q @@
 
 " Find/replace
 vnoremap <C-r> "hy:%s/<C-r>h//g<left><left>
+" this is override redo command -_-
+" nnoremap <C-r> :%s/\<<C-r><C-w>\>//g<left><left>
 
 " Toggle line numbers
 nnoremap <silent> <C-g> :set nu! rnu!<CR>
@@ -146,77 +121,22 @@ inoremap <C-k> <ESC>:m .-2<CR>==gi
 vnoremap <C-j> :m '>+1<CR>gv=gv
 vnoremap <C-k> :m '<-2<CR>gv=gv
 
-" Temporary map from learning.
-nnoremap <leader>" viw<esc>a"<esc>bi"<esc>lel
-nnoremap <leader>' viw<esc>a'<esc>bi'<esc>lel
-inoremap jk <esc>
-inoremap <esc> <esc>:echo "Press jk to escape"<CR>gi
+" Combine line preserve cursor
+nnoremap J mzJ`z
 
-" Git
-nnoremap <leader>com :G commit -v<CR>
-nnoremap <leader>dif :G diff<CR>
-" " Stage or unstage current file
-nnoremap <leader>add :Gw<CR>
-nnoremap <leader>res :G reset <C-r>%<CR>
-" " Push and pull current branch
-nnoremap <leader>pus :G push origin <C-r>=fugitive#Head()<CR><CR>
-nnoremap <leader>pul :G pull origin <C-r>=fugitive#Head()<CR><CR>
-" " Checkout
-nnoremap <leader>gco :GBranches<CR>
+" Easy escape
+inoremap jk <ESC>
+inoremap <C-c> <ESC>
 
-" GitGutter
-" " Jump between hunks
-nmap ]c <Plug>(GitGutterNextHunk)
-nmap [c <Plug>(GitGutterPrevHunk)
-" " Hunk-add and hunk-revert for chunk staging
-nmap <leader>ga <Plug>(GitGutterStageHunk)
-nmap <leader>gu <Plug>(GitGutterUndoHunk)
-" " Change preview hunk from hp to gp
-nmap <leader>gp <Plug>(GitGutterPreviewHunk)
-silent! unmap <buffer> <leader>hp
+" Press <leader>bg in order to toggle light/dark background
+map <leader>bg :let &background = ( &background == "dark"? "light" : "dark" )<CR>
 
-" ctrl+p for faster file search
-" use :Files if you want to include all files
-" nnoremap <C-p> :GFiles<CR>
-" nnoremap <leader>ff :Files<CR>
-let g:fzf_action = {
-  \ 'ctrl-t': 'tab split',
-  \ 'ctrl-s': 'split',
-  \ 'ctrl-v': 'vsplit'
-  \}
+" only use plugin if you are using nvim
+if has('nvim')
+  :lua require("rafgugi")
+endif
 
-" Telescope
-nnoremap <C-p> <cmd>Telescope git_files<CR>
-nnoremap <leader>ff <cmd>Telescope find_files<CR>
-nnoremap <leader>fg <cmd>Telescope live_grep<CR>
-nnoremap <leader>fb <cmd>Telescope buffers<CR>
-nnoremap <leader>fh <cmd>Telescope help_tags<CR>
-nnoremap <leader>ps :lua require('telescope.builtin').grep_string({ search = vim.fn.input("Grep For > ")})<CR>
-nnoremap <leader>pf :lua require('telescope.builtin').find_files()<CR>
-
-nnoremap <leader>u :UndotreeToggle<CR>
-
-" PHP file config
-augroup file_php
-  autocmd FileType php setlocal ts=4 sts=4 sw=4 expandtab
-augroup END
-
-" PHP blade file config
+" some syntax specific
 augroup file_blade_php
-  autocmd FileType blade setlocal ts=2 sts=2 sw=2 expandtab
-augroup END
-
-" Yaml file config
-augroup file_yaml
-  autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
-augroup END
-
-augroup ensure_dir_exist
-  autocmd!
-  autocmd BufWritePre * call mkdir(expand("<afile>:p:h"), "p")
-augroup END
-
-augroup Terminal
-  autocmd!
-  autocmd TermOpen * setlocal nolist nonu nornu
+  autocmd BufRead,BufNewFile *.blade.php setlocal ts=2 sts=2 sw=2 filetype=blade syntax=blade expandtab
 augroup END

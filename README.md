@@ -9,8 +9,9 @@ My configurations in `$HOME` path.
 ### Prerequisite
 * vim
 * nvim
+  * [packer](https://github.com/wbthomason/packer.nvim)
   * [ripgrep](https://github.com/BurntSushi/ripgrep#installation)
   * nerd font for vim-devicons
 
 ### Install
-* `./vim/install.sh`
+* `./install-vim.sh`
