@@ -16,7 +16,6 @@ return require('packer').startup(function(use)
   use 'sainnhe/sonokai'
   use 'kyazdani42/nvim-web-devicons'
   use 'nvim-lualine/lualine.nvim'
-  use 'itchyny/lightline.vim'
   use {'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'}
   use 'jwalton512/vim-blade'
   use {
