@@ -226,4 +226,5 @@ require("neo-tree").setup({
   }
 })
 
-vim.keymap.set('n', '<leader>pv', vim.cmd.NeoTreeFloatToggle)
+vim.keymap.set('n', '<leader>pv', vim.cmd.NeoTreeReveal)
+vim.keymap.set('n', '<leader>pb', ':Neotree buffers<CR>')
