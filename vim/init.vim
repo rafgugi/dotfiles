@@ -1,4 +1,5 @@
 syntax on
+filetype plugin indent on
 
 set exrc
 set noerrorbells visualbell t_vb=
@@ -27,6 +28,7 @@ set shiftwidth=2
 set shiftround
 set expandtab
 set smartindent
+set autoindent
 
 " Fix backspace indent
 set backspace=indent,eol,start
@@ -116,6 +118,10 @@ inoremap <C-k> <ESC>:m .-2<CR>==gi
 vnoremap <C-j> :m '>+1<CR>gv=gv
 vnoremap <C-k> :m '<-2<CR>gv=gv
 
+"" Vmap for maintain Visual Mode after shifting > and <
+vmap < <gv
+vmap > >gv
+
 " Combine line preserve cursor
 nnoremap J mzJ`z
 
@@ -136,10 +142,27 @@ if has('nvim')
 endif
 
 " some syntax specific
+augroup file_php
+  autocmd FileType php setlocal ts=4 sts=4 sw=4 expandtab autoindent
+augroup END
+
 augroup file_blade_php
   autocmd BufRead,BufNewFile *.blade.php setlocal ts=2 sts=2 sw=2 filetype=blade syntax=blade expandtab
 augroup END
 
 augroup file_java_kotlin
   autocmd BufRead,BufNewFile *.java,*.kt setlocal ts=4 sts=4 sw=4 expandtab
+augroup END
+
+if has('nvim')
+  augroup terminal_buffer
+    autocmd!
+    autocmd TermOpen * setlocal nolist nonu nornu scrolloff=0
+  augroup END
+endif
+
+" other
+augroup ensure_dir_exist
+  autocmd!
+  autocmd BufWritePre * call mkdir(expand("<afile>:p:h"), "p")
 augroup END
