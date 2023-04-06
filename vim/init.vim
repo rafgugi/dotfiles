@@ -139,3 +139,7 @@ endif
 augroup file_blade_php
   autocmd BufRead,BufNewFile *.blade.php setlocal ts=2 sts=2 sw=2 filetype=blade syntax=blade expandtab
 augroup END
+
+augroup file_java_kotlin
+  autocmd BufRead,BufNewFile *.java,*.kt setlocal ts=4 sts=4 sw=4 expandtab
+augroup END
