@@ -91,6 +91,7 @@ require('lualine').setup {
     lualine_a = {{
       'tabs',
       mode = 2,
+      max_length = vim.o.columns,
       use_mode_colors = true,
       section_separators = { left = '', right = ''},
       component_separators = { left = '|', right = '|'},
