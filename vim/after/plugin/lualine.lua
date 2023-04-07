@@ -7,10 +7,10 @@ local mode_map = {
   ['V-LINE'] = 'VL',
   ['V-REPLACE'] = 'VR',
   ['REPLACE'] = 'R',
-  ['COMMAND'] = '!',
+  ['COMMAND'] = 'C',
   ['SHELL'] = 'SH',
   ['TERMINAL'] = 'T',
-  ['EX'] = 'X',
+  ['EX'] = 'EX',
   ['S-BLOCK'] = 'SB',
   ['S-LINE'] = 'SL',
   ['SELECT'] = 'S',
@@ -38,24 +38,26 @@ local function myProgress(_)
   end
 end
 
+-- Add separator before s if s not empty
+local function beforeSeparator(s)
+  return (s == '' and '' or '| ') .. s
+end
+
+local function trim(s)
+  return s:match "^%s*(.-)%s*$"
+end
+
 require('lualine').setup {
   options = {
-    icons_enabled = true,
     theme = 'auto',
-    component_separators = {''},
-    section_separators = {''},
+    component_separators = '',
+    section_separators = '',
     disabled_filetypes = {
       statusline = {},
       winbar = {},
     },
     ignore_focus = {},
-    always_divide_middle = true,
-    globalstatus = false,
-    refresh = {
-      statusline = 1000,
-      tabline = 1000,
-      winbar = 1000,
-    }
+    globalstatus = true,
   },
   sections = {
     lualine_a = { {'mode', fmt = function(s) return mode_map[s] or s end} },
@@ -79,14 +81,6 @@ require('lualine').setup {
       {'encoding', fmt = myProgress, padding = { left = 1, right = 1 } },
     }
   },
-  inactive_sections = {
-    lualine_a = {},
-    lualine_b = {},
-    lualine_c = {'filename'},
-    lualine_x = {'location'},
-    lualine_y = {},
-    lualine_z = {}
-  },
   tabline = {
     lualine_a = {{
       'tabs',
@@ -106,8 +100,13 @@ require('lualine').setup {
       end
     }},
   },
-  winbar = {},
-  inactive_winbar = {},
+  inactive_winbar = {
+    lualine_a = {
+      {'filename', symbols = { unnamed = '' , readonly = '' }, fmt = trim },
+      {'diff', padding = { left = 0, right = 1 }, fmt = beforeSeparator },
+      {'diagnostics', padding = { left = 0, right = 1 }, fmt = beforeSeparator },
+    },
+  },
   extensions = {}
 }
 
