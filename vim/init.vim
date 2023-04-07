@@ -117,16 +117,17 @@ inoremap <C-k> <ESC>:m .-2<CR>==gi
 vnoremap <C-j> :m '>+1<CR>gv=gv
 vnoremap <C-k> :m '<-2<CR>gv=gv
 
-"" Vmap for maintain Visual Mode after shifting > and <
+"" Vmap for maintain Visual Mode after indenting
 vmap < <gv
 vmap > >gv
+vmap = =gv
 
 " Combine line preserve cursor
 nnoremap J mzJ`z
 
 " Cursor stays in the middle when searching
-nnoremap n nzz
-nnoremap N Nzz
+" nnoremap n nzzzv
+" nnoremap N Nzzzv
 
 " Easy escape
 inoremap jk <ESC>
