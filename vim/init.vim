@@ -60,8 +60,6 @@ nnoremap <silent> <leader>- :resize -5<CR>
 " Tab navigation
 nnoremap <silent> <C-n> :tabnew<CR>
 nnoremap <silent> <C-x> :tabclose<CR>
-nnoremap <S-Tab> gT
-nnoremap <Tab> gt
 nnoremap <silent> <leader><S-Tab> :execute "tabmove" tabpagenr() - 2<CR>
 nnoremap <silent> <leader><Tab> :execute "tabmove" tabpagenr() + 1<CR>
 " Go to tab by number
