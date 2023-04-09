@@ -84,8 +84,11 @@ vnoremap <leader>y "+y
 nnoremap Y y$
 
 " ex without clobbering my unnamed register.
+nnoremap <leader>c "_c
+nnoremap <leader>C "_C
+vnoremap <leader>c "_c
 nnoremap <leader>d "_d
-nnoremap <leader>D "_d$
+nnoremap <leader>D "_D
 vnoremap <leader>d "_d
 vnoremap <leader>p "_dP
 
@@ -101,8 +104,8 @@ vnoremap <C-r> "hy:%s/<C-r>h//g<left><left>
 nnoremap <silent> <C-g> :set nu! rnu!<CR>
 " Toggle wrap text
 nnoremap <C-z> :set wrap!<CR>
-imap <C-z> <ESC><C-z>gi
-vmap <C-z> <ESC><C-z>gv
+inoremap <C-z> <ESC>:set wrap!<CR>gi
+vnoremap <C-z> <ESC>:set wrap!<CR>gv
 
 " Line moving
 " " Normal mode
