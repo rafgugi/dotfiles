@@ -38,6 +38,16 @@ local function myProgress(_)
   end
 end
 
+-- lion scroll bar as progress bar
+local function lionScroll(_)
+  local sbar = { '█', '▇', '▆', '▅', '▄', '▃', '▂', '▁', ' ' }
+  -- local sbar = { '🭶', '🭷', '🭸', '🭹', '🭺', '🭻' }
+  local cur = vim.fn.line('.')
+  local total = vim.fn.line('$')
+  local i = math.floor((cur - 1) / total * #sbar) + 1
+  return string.rep(sbar[i], 2)
+end
+
 -- Add separator before s if s not empty
 local function beforeSeparator(s)
   return (s == '' and '' or '| ') .. s
@@ -46,6 +56,9 @@ end
 local function trim(s)
   return s:match "^%s*(.-)%s*$"
 end
+
+local padding_right = {left = 0, right = 1}
+local padding_left = {left = 1, right = 0}
 
 require('lualine').setup {
   options = {
@@ -64,21 +77,18 @@ require('lualine').setup {
     lualine_b = { {'filename', path = 1} },
     lualine_c = {},
     lualine_x = {
-      'branch',
-      {'diff', padding = { right = 1, left = 0 } },
-      'diagnostics',
+      {'branch'},
+      {'diff', padding = padding_right},
     },
     lualine_y = {
-      {
-        'filetype',
-        colored = true,    -- Displays filetype icon in color if set to true
-        icon_only = false, -- Display only an icon for filetype
-      }
+      {'filetype', colored = true, icon_only = false},
+      {'diagnostics', symbols = {error = ' ', warn = ' ', info = ' ', hint = ' '}, padding = padding_right},
     },
     lualine_z = {
-      {'searchcount', padding = { left = 1, right = 0 } },
-      {'encoding', fmt = myLocation, padding = { left = 1, right = 0 } },
-      {'encoding', fmt = myProgress, padding = { left = 1, right = 1 } },
+      {'searchcount', padding = padding_left},
+      {'encoding', fmt = myLocation, padding = padding_left},
+      {'encoding', fmt = myProgress, padding = padding_left},
+      {'filename', fmt = lionScroll},
     }
   },
   tabline = {
@@ -102,13 +112,15 @@ require('lualine').setup {
   },
   inactive_winbar = {
     lualine_a = {
-      {'filename', symbols = { unnamed = '' , readonly = '' }, fmt = trim },
-      {'diff', padding = { left = 0, right = 1 }, fmt = beforeSeparator },
-      {'diagnostics', padding = { left = 0, right = 1 }, fmt = beforeSeparator },
+      {'filename', symbols = {unnamed = '', readonly = ''}, fmt = trim},
+      {'diff', padding = padding_right, fmt = beforeSeparator},
+      {'diagnostics', padding = padding_right, fmt = beforeSeparator},
     },
   },
   extensions = {}
 }
 
--- Remove default status bar because we already have custom line
+-- Remove default status bar
 vim.opt.showmode = false
+-- Remove default search count
+vim.opt.shortmess:append({ S = true })
