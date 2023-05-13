@@ -13,12 +13,12 @@ local cmp_mappings = lsp.defaults.cmp_mappings({
   ['<C-k>'] = cmp.mapping.select_prev_item(cmp_select),
   ['<C-j>'] = cmp.mapping.select_next_item(cmp_select),
   ['<C-l>'] = cmp.mapping.confirm({ select = true }),
+  ['<Tab>'] = cmp.mapping.confirm({ select = true }),
   ['<C-h>'] = cmp.mapping.abort(),
+  ['<S-Tab>'] = cmp.mapping.abort(),
   ['<C-Space>'] = cmp.mapping.complete(),
 })
 
-cmp_mappings['<Tab>'] = nil
-cmp_mappings['<S-Tab>'] = nil
 cmp_mappings['<CR>'] = nil
 
 lsp.setup_nvim_cmp({
