@@ -96,9 +96,12 @@ vnoremap <leader>p "_dP
 nnoremap Q @@
 
 " Find/replace
-vnoremap <C-r> "hy:%s/<C-r>h//g<left><left>
-" this is override redo command -_-
-" nnoremap <C-r> :%s/\<<C-r><C-w>\>//g<left><left>
+vnoremap <C-r> "hy:%s/<C-R><C-R>=substitute(escape(@h, '/\.*$^~['), '\_s\+$', '', 'g')<CR>//g<left><left>
+vnoremap <silent> * :<C-U>
+  \let old_reg=getreg('"')<Bar>let old_regtype=getregtype('"')<CR>
+  \gvy/<C-R>=&ic?'\c':'\C'<CR><C-R><C-R>=substitute(
+  \escape(@", '/\.*$^~['), '\_s\+', '\\_s\\+', 'g')<CR><CR>
+  \gVzv:call setreg('"', old_reg, old_regtype)<CR>
 
 " Toggle line numbers
 nnoremap <silent> <C-g> :set nu! rnu!<CR>
