@@ -37,7 +37,7 @@ set backspace=indent,eol,start
 map <Space> <leader>
 
 " Trying to imitate duplicate file in sublime
-nnoremap <leader>dup :saveas <C-r>=expand('%:p')<CR>
+nnoremap <leader>dup :saveas <C-r>=expand('%')<CR>
 
 " Editing vimrc
 nnoremap <leader>ev :vsplit $MYVIMRC<CR>
