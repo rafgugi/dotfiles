@@ -73,6 +73,13 @@ noremap <leader>7 7gt
 noremap <leader>8 8gt
 noremap <leader>9 9gt
 
+" Buffer navigation
+nnoremap <silent> ]b :bn<CR>
+nnoremap <silent> [b :bp<CR>
+nnoremap <silent> ]B :blast<CR>
+nnoremap <silent> [B :bfirst<CR>
+nnoremap <silent> <leader>bd :bdelete<CR>
+
 " Map yank current path to default register
 nnoremap <leader>cp :let @+ = expand("%")<cr>:echom "Yanked current path"<cr>
 

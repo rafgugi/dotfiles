@@ -93,21 +93,32 @@ require('lualine').setup {
   },
   tabline = {
     lualine_a = {{
-      'tabs',
+      'buffers',
+      show_filename_only = true,
+      hide_filename_extension = false,
+      show_modified_status = true,
+      icons_enabled = false,
       mode = 2,
       max_length = vim.o.columns,
+      filetype_names = {
+        TelescopePrompt = 'Telescope',
+        dashboard = 'Dashboard',
+        packer = 'Packer',
+        fzf = 'FZF',
+        alpha = 'Alpha'
+      }, -- Shows specific buffer name for that filetype ( { `filetype` = `buffer_name`, ... } )
       use_mode_colors = true,
-      section_separators = { left = '', right = ''},
-      component_separators = { left = '|', right = '|'},
-      fmt = function(name, context)
-        -- Show + if buffer is modified in tab
-        local buflist = vim.fn.tabpagebuflist(context.tabnr)
-        local winnr = vim.fn.tabpagewinnr(context.tabnr)
-        local bufnr = buflist[winnr]
-        local mod = vim.fn.getbufvar(bufnr, '&mod')
-
-        return name .. (mod == 1 and '+' or '')
-      end
+      symbols = {
+        modified = ' ●',
+        alternate_file = '',
+        directory =  '',
+      },
+    }},
+    lualine_z = {{
+      'tabs',
+      mode = 0,
+      max_length = vim.o.columns,
+      use_mode_colors = true,
     }},
   },
   inactive_winbar = {
