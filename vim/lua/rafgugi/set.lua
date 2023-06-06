@@ -10,6 +10,9 @@ vim.opt.list = true
 vim.opt.termguicolors = true
 vim.opt.isfname:append('@-@')
 
+-- enable sign column for diagnostic and gitsign
+vim.opt.signcolumn = 'auto:2'
+
 -- vim.opt.guicursor = ''
 -- 
 -- vim.opt.swapfile = false
