@@ -146,9 +146,6 @@ inoremap jk <ESC>
 inoremap <C-c> <ESC>
 cnoremap <C-c> <ESC>
 
-" Press <leader>bg in order to toggle light/dark background
-map <leader>bg :let &background = ( &background == "dark"? "light" : "dark" )<CR>
-
 " only use plugin if you are using nvim
 if has('nvim')
   :lua require("rafgugi")
