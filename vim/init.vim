@@ -144,6 +144,7 @@ nnoremap J mzJ`z
 " Easy escape
 inoremap jk <ESC>
 inoremap <C-c> <ESC>
+cnoremap <C-c> <ESC>
 
 " Press <leader>bg in order to toggle light/dark background
 map <leader>bg :let &background = ( &background == "dark"? "light" : "dark" )<CR>
