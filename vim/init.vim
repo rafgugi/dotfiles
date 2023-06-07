@@ -9,6 +9,7 @@ set splitright " Yes! default split vertical will go to the right
 set splitbelow " Yes! default split horizontal will go to the bottom
 set nowrap " default no wrap. toggle with <C-z>
 set autoread
+set title titlestring=%{getcwd()}
 
 " Do not redraw screen in the middle of a macro
 set lazyredraw
