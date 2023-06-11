@@ -79,7 +79,7 @@ nnoremap <silent> ]b :bn<CR>
 nnoremap <silent> [b :bp<CR>
 nnoremap <silent> ]B :blast<CR>
 nnoremap <silent> [B :bfirst<CR>
-nnoremap <silent> <leader>bd :bdelete<CR>
+nnoremap <silent> <leader>bd :bp<bar>sp<bar>bn<bar>bd<CR>
 
 " Map yank current path to default register
 nnoremap <leader>cp :let @+ = expand("%")<cr>:echom "Yanked current path"<cr>
