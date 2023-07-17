@@ -135,6 +135,7 @@ require("neo-tree").setup({
           --}
       ["m"] = "move", -- takes text input for destination, also accepts the optional config.show_path option like "add".
       ["q"] = "close_window",
+      ["<C-c>"] = "close_window",
       ["R"] = "refresh",
       ["?"] = "show_help",
       ["<"] = "prev_source",
@@ -226,5 +227,5 @@ require("neo-tree").setup({
   }
 })
 
-vim.keymap.set('n', '<leader>pv', vim.cmd.NeoTreeReveal)
+-- vim.keymap.set('n', '<leader>pv', vim.cmd.NeoTreeReveal)
 vim.keymap.set('n', '<leader>pb', ':Neotree buffers<CR>')
