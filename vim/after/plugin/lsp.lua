@@ -38,6 +38,15 @@ lsp.on_attach(function(_, bufnr)
   vim.keymap.set('n', '<leader>vrn', function() vim.lsp.buf.rename() end, opts)
   vim.keymap.set('i', '<C-h>', function() vim.lsp.buf.signature_help() end, opts)
 end)
+
+local lspconfig = require('lspconfig')
+lspconfig.eslint.setup({
+  filetypes= { 'javascript', 'javascriptreact', 'javascript.jsx', 'vue', 'svelte', 'astro' },
+})
+lspconfig.tsserver.setup({
+  filetypes= { 'typescript', 'typescriptreact', 'typescript.tsx' },
+})
+
 lsp.setup()
 
 vim.diagnostic.config({
