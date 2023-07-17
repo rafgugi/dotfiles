@@ -9,5 +9,4 @@ vim.keymap.set("n", "<leader>res", ":G reset <C-r>%<CR>")
 -- " Push and pull current branch
 vim.keymap.set("n", "<leader>pus", ":G push origin <C-r>=fugitive#Head()<CR><CR>")
 vim.keymap.set("n", "<leader>pul", ":G pull origin <C-r>=fugitive#Head()<CR><CR>")
--- " Checkout
-vim.keymap.set("n", "<leader>gco", ":GBranches<CR>")
+vim.keymap.set("n", "<leader>pur", ":G pull --rebase origin <C-r>=fugitive#Head()<CR><CR>")

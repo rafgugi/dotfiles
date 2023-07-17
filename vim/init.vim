@@ -10,6 +10,7 @@ set splitbelow " Yes! default split horizontal will go to the bottom
 set nowrap " default no wrap. toggle with <C-z>
 set autoread
 set title titlestring=%{getcwd()}
+set switchbuf-=unlisted " prevent switching to the deleted buffer
 
 " Do not redraw screen in the middle of a macro
 set lazyredraw
@@ -20,6 +21,7 @@ set hidden
 " Searching
 set hlsearch " highlight all matching search
 set incsearch
+set ignorecase
 set smartcase
 
 " Softtabs, 2 spaces
@@ -144,7 +146,7 @@ nnoremap J mzJ`z
 " Easy escape
 inoremap jk <ESC>
 inoremap <C-c> <ESC>
-cnoremap <C-c> <ESC>
+cnoremap <expr> <C-c> pumvisible() ? "\<ESC>" : "\<C-e>\<C-c>"
 
 " only use plugin if you are using nvim
 if has('nvim')
