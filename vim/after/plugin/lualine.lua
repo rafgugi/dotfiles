@@ -121,9 +121,14 @@ require('lualine').setup {
       use_mode_colors = true,
     }},
   },
+  winbar = {
+    lualine_a = {
+      {'filename', path = 1, symbols = {unnamed = '', readonly = ''}, fmt = trim},
+    },
+  },
   inactive_winbar = {
     lualine_a = {
-      {'filename', symbols = {unnamed = '', readonly = ''}, fmt = trim},
+      {'filename', path = 1, symbols = {unnamed = '', readonly = ''}, fmt = trim},
       {'diff', padding = padding_right, fmt = beforeSeparator},
       {'diagnostics', padding = padding_right, fmt = beforeSeparator},
     },
