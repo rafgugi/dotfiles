@@ -25,7 +25,7 @@ lsp.setup_nvim_cmp({
   mapping = cmp_mappings
 })
 
-lsp.on_attach(function(_, bufnr)
+local function on_attach(_, bufnr)
   local opts = {buffer = bufnr, remap = false}
   vim.keymap.set('n', 'gd', function() vim.lsp.buf.definition() end, opts)
   vim.keymap.set('n', 'K', function() vim.lsp.buf.hover() end, opts)
@@ -37,16 +37,16 @@ lsp.on_attach(function(_, bufnr)
   vim.keymap.set('n', '<leader>vrr', function() vim.lsp.buf.references() end, opts)
   vim.keymap.set('n', '<leader>vrn', function() vim.lsp.buf.rename() end, opts)
   vim.keymap.set('i', '<C-h>', function() vim.lsp.buf.signature_help() end, opts)
-end)
+end
 
-local lspconfig = require('lspconfig')
-lspconfig.eslint.setup({
-  filetypes= { 'javascript', 'javascriptreact', 'javascript.jsx', 'vue', 'svelte', 'astro' },
+lsp.configure('eslint', {
+  filetypes={'javascript', 'javascriptreact', 'javascript.jsx', 'vue', 'svelte', 'astro'},
 })
-lspconfig.tsserver.setup({
-  filetypes= { 'typescript', 'typescriptreact', 'typescript.tsx' },
+lsp.configure('tsserver', {
+  filetypes={'typescript', 'typescriptreact', 'typescript.tsx'},
 })
 
+lsp.on_attach(on_attach)
 lsp.setup()
 
 vim.diagnostic.config({
