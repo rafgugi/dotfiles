@@ -61,6 +61,7 @@ nnoremap <silent> <leader>+ :resize +5<CR>
 nnoremap <silent> <leader>- :resize -5<CR>
 
 " Tab navigation
+nnoremap <silent> <leader>T :tabs<CR>
 nnoremap <silent> <C-n> :tabnew<CR>
 nnoremap <silent> <C-x> :tabclose<CR>
 nnoremap <silent> <leader><S-Tab> :execute "tabmove" tabpagenr() - 2<CR>
