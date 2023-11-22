@@ -1,9 +1,6 @@
 -- move horizontal clears search highlighting
 vim.keymap.set("n", "<C-c>", "<C-c>:noh<CR>", { silent = true })
 
--- Temporary map from learning.
-vim.keymap.set("i", "<Esc>", "<Esc>:echo 'Press jk to escape'<CR>gi")
-
 -- buffer navigation
 vim.keymap.set('n', '[b', function() vim.cmd.bprev({ count = vim.v.count1 }) end)
 vim.keymap.set('n', ']b', function() vim.cmd.bnext({ count = vim.v.count1 }) end)
