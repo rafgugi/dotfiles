@@ -145,6 +145,7 @@ nnoremap J mzJ`z
 " nnoremap N Nzzzv
 
 " Easy escape
+inoremap jk <ESC>
 inoremap <C-c> <ESC>
 cnoremap <expr> <C-c> pumvisible() ? "\<ESC>" : "\<C-e>\<C-c>"
 
