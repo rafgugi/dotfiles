@@ -18,7 +18,12 @@ require('telescope').setup{
         ['<C-c>'] = actions.close,
         ['q'] = actions.close,
       }
-    }
+    },
+    scroll_strategy = 'limit',
+    dynamic_preview_title = true,
+    path_display = {
+      truncate = 1,
+    },
   },
   extensions = {
     file_browser = {
