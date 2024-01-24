@@ -8,7 +8,7 @@ set sidescrolloff=10 " Leave n characters of horizontal buffer when scrolling
 set splitright " Yes! default split vertical will go to the right
 set splitbelow " Yes! default split horizontal will go to the bottom
 set nowrap " default no wrap. toggle with <C-z>
-set autoread
+set autoread " autoload file that changed on the disk
 set title titlestring=%{getcwd()}
 set switchbuf-=unlisted " prevent switching to the deleted buffer
 
@@ -46,26 +46,36 @@ nnoremap <leader>dup :saveas <C-r>=expand('%')<CR>
 nnoremap <leader>ev :vsplit $MYVIMRC<CR>
 nnoremap <leader>so :so $MYVIMRC<CR>
 
-" File Explorer
+" File
+nnoremap <leader><Space> :w<CR>
 nnoremap <leader>pv :Ex<CR>
+nnoremap <leader>qq :qa<CR>
+
+" json
+nnoremap <silent> <leader>cj m':%!jq<CR>`':set syntax=json<CR>
+vnoremap <silent> <leader>cj :!jq<CR>
+nnoremap <silent> <leader>cJ :%!jq -c<CR>
+vnoremap <silent> <leader>cJ :!jq -c<CR>
 
 " Terminal mode
-tnoremap jk <C-\><C-n>
-tnoremap <C-h> <C-b>
-tnoremap <C-j> <C-n>
-tnoremap <C-k> <C-p>
-tnoremap <C-l> <C-f>
+tnoremap <C-[><C-[> <C-\><C-n>
+tnoremap <S-Space> <Space>
+tnoremap <S-CR> <CR>
+tnoremap <C-CR> <CR>
+tnoremap <C-BS> <BS>
+tnoremap <C-.> .
 
 " " Panel resize
 nnoremap <silent> <leader>+ :resize +5<CR>
 nnoremap <silent> <leader>- :resize -5<CR>
+nnoremap <C-w>o <C-w>\|<C-w>_
 
 " Tab navigation
 nnoremap <silent> <leader>T :tabs<CR>
-nnoremap <silent> <C-n> :tabnew<CR>
-nnoremap <silent> <C-x> :tabclose<CR>
-nnoremap <silent> <leader><S-Tab> :execute "tabmove" tabpagenr() - 2<CR>
-nnoremap <silent> <leader><Tab> :execute "tabmove" tabpagenr() + 1<CR>
+nnoremap <silent> <leader><Tab><Tab> :tabnew<CR>
+nnoremap <silent> <leader><Tab>d :tabclose<CR>
+" nnoremap <silent> <leader><S-Tab> :execute "tabmove" tabpagenr() - 2<CR>
+" nnoremap <silent> <leader><Tab> :execute "tabmove" tabpagenr() + 1<CR>
 " Go to tab by number
 noremap <leader>1 1gt
 noremap <leader>2 2gt
@@ -116,10 +126,10 @@ vnoremap <silent> * :<C-U>
 
 " Toggle line numbers
 nnoremap <silent> <C-g> :set nu! rnu!<CR>
+nnoremap <leader>ul :set nu!<CR>
+nnoremap <leader>uL :set rnu!<CR>
 " Toggle wrap text
-nnoremap <C-z> :set wrap!<CR>
-inoremap <C-z> <ESC>:set wrap!<CR>gi
-vnoremap <C-z> <ESC>:set wrap!<CR>gv
+nnoremap <leader>uw :set wrap!<CR>
 
 " Line moving
 " " Normal mode
